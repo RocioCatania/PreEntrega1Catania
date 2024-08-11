@@ -4,7 +4,7 @@ alert("¡Bienvenido a su mejor opcion de viajes por el Sur Argentino, segui y en
 
 
 
-let destino= parseFloat(prompt("Ingrese su destino dentro de las siguientes 4 opciones: opcion 1:Puerto Madryn , Chubut; opcion 2:El Calafate, Santa Cruz, opcion 3:Bariloche,Neuquen , opcion 4:Ushuaia, Tierra del Fuego "));
+let destino= parseFloat(prompt("Ingrese su destino dentro de las siguientes 4 opciones: \n  1: Puerto Madryn , Chubut; \n  2: El Calafate, Santa Cruz, \n  3: Bariloche,Neuquen , \n  4: Ushuaia, Tierra del Fuego "));
     switch (destino) {
         case 1:
             alert("¡Felicitaciones! Elegiste tu destino: 'Puero Madryn, Chubut' Tenemos el mejor paquete para vos: Estadia con desayuno incluido + vuelo + Excursion a Peninsula Valdés (estadia por 3 dias y 2 noches con base doble) a solo un precio de $900.000.- p/persona ");
@@ -35,8 +35,7 @@ let destino= parseFloat(prompt("Ingrese su destino dentro de las siguientes 4 op
         break;
     }
 
-    let valorDestino= parseFloat
-    (prompt("Ingrese el valor de su destino dentro de las siguientes 4 opciones: opcion 1:Puerto Madryn ($1.800.000), Chubut; opcion 2:El Calafate, Santa Cruz ($1.400.000), opcion 3:Bariloche,Neuquen ($1.600.000), opcion 4:Ushuaia, Tierra del Fuego ($1.400.000)"));
+    let valorDestino= parseFloat(prompt("Ingrese el valor de su destino dentro de las siguientes 4 opciones: opcion 1:Puerto Madryn ($1.800.000), Chubut; opcion 2:El Calafate, Santa Cruz ($1.400.000), opcion 3:Bariloche,Neuquen ($1.600.000), opcion 4:Ushuaia, Tierra del Fuego ($1.400.000)"));
     if (valorDestino==1) {
         valorDestino=1800000;
     } else if (valorDestino==2 || valorDestino==4) {
@@ -62,6 +61,13 @@ let destino= parseFloat(prompt("Ingrese su destino dentro de las siguientes 4 op
     }
 
     alert( "El valor de su cuota es de : " + pagoTarjeta(valorDestino,cuota)) ;
+
+
+
+
+
+
+
 
 
 
