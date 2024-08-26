@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/*font-family: "Inter", sans-serif;*/
+
+.logo {
+    width: 100%;
+    height: 100%;
+}
+.logo1 {
+    background-color: white;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    
+}
+
+.avionCarrito {
+    background-color: white;
+    width: 3.125rem; 
+    height: 3.125rem;
+    padding-top: .625rem;
+}
+.carrito {
+    grid-column: 3/4;
+    grid-row:1/2 ;
+}
+
+.navBar {
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 15.625rem 1fr 6.25rem;
+    grid-template-rows: 6.25rem 3.125rem ;
+    position: fixed;
+    
+}
+.navBar nav ul {
+    font-family: 'Times New Roman', Times, serif;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    column-width: 1.25rem;
+    align-items: center;
+    margin-left: 3.125rem;
+} 
+.contactanos {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    grid-column: 2/4;
+    grid-row:2/3 ;
+    padding-right: 1.25rem;
+    background-color: #051937;
+    color: white;
+}
+
+
+a {
+    font-family: 'Times New Roman', Times, serif;
+
+    text-decoration: none;
+    color: black;
+    padding: 0px 2.1875rem 0rem 2.1875rem;
+} 
+a:hover {
+    font: size 20px; 
+    color:#A8EB12;
+    text-shadow: #051937 0px 15px 15px 0px;
+}
+
+li {
+    list-style: none;
+}
+/* .redesSociales {
+
+} */
+#footer {
+    width: 100%;
+    height: 5rem ;
+    background: linear-gradient(to right, #0519376f,#a6eb125d);
+    display: flex;
+    padding-left: 1.875rem;
+
+}
+@keyframes color {
+    0% {
+    background-position: 0 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0 50%;
+}
+}
+.redesSociales .divUbicacion .divFecha {
+    height: 5rem;
+}
+.redesSociales {
+    width: 25%;
+}
+.redesSociales a img {
+    width:   2.5rem;
+    height:  2.5rem;
+}
+.ubicacion a img {
+    width:   2.5rem;
+    height:  2.5rem;
+}
+.ubicacion {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.ulRedesSociales {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fecha {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5625rem;
+}
+.fecha p {
+    display: flex;
+    justify-content: center;
+    padding-left: 6.25rem;
+}
+#bodyIndex {
+    background-image: url(../assets/fondos/index.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+/* .mainIndex {
+    height: 100%;
+} */
+.sectionMain {
+width: 100%;
+height: 53rem; 
+display: flex;
+justify-content: center;
+align-items: center;
+} 
+.sectionMain h1 {
+    font-size: 1.875rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 1.25rem;
+    padding-top: 1.875rem;
+    text-align: center;
+}
+.sectionMain p {
+    height: 100%;
+    font-size: 1.5rem;
+    padding: 3.125rem 3.125rem 0rem 3.125rem ;
+color: black;
+text-shadow: white  .9375rem 0rem .9375rem 0rem;
+}
+
+.divMain {
+    background-color: #3bbcc564;
+    width: 60%;
+    height: 75%;
+    margin-top: 9.375rem;
+    box-shadow: rgba(0, 0, 0, 0.442)  .1rem .1rem .1rem .1rem;
+} 
+.divMain p {
+    line-height: 1.875rem;
+    text-align: justify;
+}
+
+#mainViajes {
+    background-image: url('../assets/fondos/viajes.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+#sectionViajes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectionViajes div {
+    background-color: #05193753; 
+    width: 50%;
+    height: 60%;
+    /* margin-top: 3.125rem; */
+    box-shadow: rgba(0, 0, 0, 0.442)  .1rem .1rem .1rem .1rem;
+}
+
+#sectionViajes div h1 {
+    font-size: 1.6875rem;
+    text-align:center; 
+    font-weight: 400;
+    background-color: #24a4779f;
+    padding-top: 1.5rem;
+    font-family: "Inter", sans-serif;
+    color: #051937;
+    letter-spacing: .3125rem;
+}
+#sectionViajes div h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: #24a4779f;
+    padding: 1.5rem;
+    font-family: "Inter", sans-serif;
+    letter-spacing: .625rem;
+}
+
+.formViajes {
+    width: 70%;
+    height: 60%;
+    font-size: 1.125rem;
+    color: white;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 5% 15% 5% 15% 5% 10% 5% 15%;
+    padding-left: 20%;
+    padding-top: .625rem;
+    column-gap: 3.125rem;
+    row-gap: .625rem;
+    
+}
+#sectionViajes div p {
+    padding-left: 1.25rem;
+    padding-top: 1.875rem;
+}
+#desde {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+#a {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+#fechasalida {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+#fechaRegreso {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+#idaYVuelta {
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+#SoloIda {
+    grid-column: 2/3;
+    grid-row: 6/7;   
+}
+#persona {
+    grid-column: 1/2;
+    grid-row: 8/9;
+}
+.botonBuscar {
+    grid-column: 2/3;
+    grid-row: 8/9;
+    background-color: #051937;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border-radius: 1.25rem;
+    letter-spacing: .1875rem;
+    box-shadow: rgba(255, 255, 255, 0.386)  .1rem .1rem .1rem .1rem;
+    
+}
