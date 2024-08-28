@@ -278,3 +278,29 @@ text-shadow: white  .9375rem 0rem .9375rem 0rem;
     box-shadow: rgba(255, 255, 255, 0.386)  .1rem .1rem .1rem .1rem;
     
 }
+#mainCarrito {
+width: 100%;
+height: 100vh;
+    background-image: url(../assets/fondos/carrito.jpeg);
+    background-size: cover;
+    background-position: center;
+    
+}
+.sectionCarrito {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divBorrarTodo {
+    width: 50%;
+    height: .625rem;
+}
+.divCarrito {
+    width: 50%;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.449);
+    margin-top: 6.25rem;
+    color: white;
+}
