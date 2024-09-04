@@ -11,6 +11,7 @@ formViajes.classList.add('formViajes');
 mainViajes.appendChild(sectionViajes);
 sectionViajes.appendChild(divViajes);
 divViajes.append(h1Viajes, h2Viaje, formViajes, parrafoViajes);
+divViajes.setAttribute("data-aos","zoom-in");
 formViajes.appendChild(botonBuscar);
 botonBuscar.classList.add("botonBuscar");
 botonBuscar.innerHTML="BUSCAR";
@@ -156,4 +157,77 @@ for (let i=0;i< localStorage.length;i++){
     console.log(clave); 
 }
 
+const resultado= document.querySelector('.resultado');
+const formtiempo= document.querySelector('.tiempo');
+const destinosSur= document.querySelector('#sur');
+const argentina=document.querySelector('#pais');
 
+ formtiempo.addEventListener('submit',(e)=> {
+    e.preventDefault();
+    if(destinosSur.value===""||argentina.value===""){
+        error("Las opciones son incorrectas");
+        return;
+    }
+
+    callAPI(destinosSur.value,argentina.value);
+
+ })
+function error(mensaje){
+   
+    const alerta=document.createElement('p');
+    alerta.classList.add('alertaMensaje');
+    alerta.innerHTML=mensaje;
+
+    formtiempo.appendChild(alerta);
+    setTimeout(() => {
+        alerta.remove();
+    }, 3000);
+}
+
+
+
+
+
+ function callAPI(destinosSur,argentina) {
+    const apiID="7f795abfcd83407347e8f8252b748fe7";
+    const url=   `https://api.openweathermap.org/data/2.5/weather?q=${destinosSur},,${argentina}&appid=${apiID}`;
+    fetch(url)
+        .then (data=> {
+            return data.json();
+    })
+    .then (dataJSON=> {
+            limpiarHTML();
+            icono(dataJSON);
+    })
+    .catch( error=>{
+        console.log(error)
+        ;})
+    }
+    
+    function centigrados (temp) {
+        return parseInt(temp-273.15);
+    }
+    
+    function icono (data) {
+        const {name,main:{temp,temp_min,temp_max},weather:[arr]}= data;
+    
+        const grados= centigrados(temp);
+        const gradosmax= centigrados(temp_max);
+        const gradosmin= centigrados(temp_min);
+        
+        const contenedor=document.createElement('div');
+        contenedor.innerHTML=`
+        <h2>Sur Argentino</h2>
+        <p>Clima en ${name}</p>
+        <img src="https://openweathermap.org/img/wn/${arr.icon}@2x.png" alt="icon">
+        <h2>${grados}°C</h2>
+        <p>max:${gradosmax}°C</p>
+        <p>min:${gradosmin}°C</p>`
+        ;
+        resultado.appendChild(contenedor);
+
+    }
+    function limpiarHTML () {
+        resultado.innerHTML="";
+    }
+    callAPI(destinosSur.value);

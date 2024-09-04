@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header id="header">
@@ -13,6 +13,31 @@
     </header>
     <main id="mainViajes">
         <section  id="sectionViajes"></section>
+        <section class="seccionClima">
+            <div class="resultado">
+                <H1>Buscador del Clima</H1>
+                <!-- <p>Agregar Ciusas y Pais</p>
+                <h5>Clima en el Sur Argentino</h5>
+                <img src="" alt="">
+                <h2>28°c</h2>
+                <p>max: 29°c</p>
+                <p>min: 17°c</p> -->
+            </div>
+            <form action="" method="get" class="tiempo">
+                <select name="" id="pais">
+                    <option disabled selected value="">Seleccione el Pais</option>
+                    <option value="AR">Argentina</option>
+                </select>
+                <select name=""  id="sur">
+                    <option disabled selected value="">Seleccione la Provincia a la que viajara</option>
+                    <option value="santaCruz">Santa Cruz</option>
+                    <option value="chubut">Chubut</option>
+                    <option value="neuquen">Neuquen</option>
+                    <option value="Ushuaia">Ushuaia</option>
+                </select>
+                <input type="submit" name="" id="" value="Ver Clima" >
+            </form>
+        </section>
     </main>
     <footer id="footer">
         
@@ -22,4 +47,8 @@
     <script src="js/Navegacion.js"></script>
     <script src="js/Footer.js"></script>
     <script src="js/Viajes.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </html>
