@@ -10,15 +10,15 @@ const contactanos= document.createElement('a');
 
 const enlace = [
     {
-        link:"VIAJES",
+        link:"viajes",
         nombre:"PLANIFICA TU VIAJE"
     },
     {
-        link:"DESTINOS",
+        link:"destinos",
         nombre:"DESTINOS"
     },
     {
-        link:"PAQUETES",
+        link:"paquetes",
         nombre:"PAQUETES"
     },
 ];
