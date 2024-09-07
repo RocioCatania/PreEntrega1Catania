@@ -53,5 +53,4 @@ avionCarrito.classList.add("avionCarrito");
 carrito.classList.add("carrito");
 logo.classList.add("logo1");
 contactanos.classList.add("contactanos");
-// ul.className("ul");
 

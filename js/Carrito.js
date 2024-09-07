@@ -2,85 +2,97 @@
 
 
 
+const mainCarrito = document.querySelector('#mainCarrito');
+const sectionCarrito = document.createElement('section');
+const divCarrito = document.createElement('div');
+const divBorrarTodo = document.createElement('div');
+const borrarTodo = document.createElement('button');
 
-
-const mainCarrito= document.querySelector('#mainCarrito');
-const sectionCarrito= document.createElement('section');
-const divCarrito= document.createElement('div');
+sectionCarrito.classList.add("sectionCarrito");
+divCarrito.classList.add("divCarrito");
+divBorrarTodo.classList.add("divBorrarTodo");
+borrarTodo.classList.add('borrarTodo');
+borrarTodo.innerHTML = "BORRAR CARRITO";
 
 mainCarrito.appendChild(sectionCarrito);
 sectionCarrito.appendChild(divCarrito);
-sectionCarrito.classList.add("sectionCarrito");
-divCarrito.classList.add("divCarrito");
+sectionCarrito.appendChild(divBorrarTodo);
+divBorrarTodo.appendChild(borrarTodo);
 
-const divBorrarTodo=document.createElement('div');
-    divBorrarTodo.classList.add("divBorrarTodo");
-    sectionCarrito.appendChild(divBorrarTodo);
-    const borrarTodo= document.createElement('button');
-    borrarTodo.innerHTML="BORRAR CARRITO";
-    divBorrarTodo.appendChild(borrarTodo);
-    borrarTodo.classList.add('borrarTodo');
-    borrarTodo.addEventListener("click",()=>{
+borrarTodo.addEventListener("click", () => {
     localStorage.clear();
     location.reload();
-    });
+});
 
+for (let i = 0; i < localStorage.length; i++) {
+    let parrafo = document.createElement('p');
+    let clave = localStorage.key(i);
+    const viajeData = JSON.parse(localStorage.getItem("Paquete Elegido"));
 
-let clave;
+    if (viajeData) {
+        const clavesMostrar = ['desde', 'hasta', 'personas', 'llegada', 'salida', 'precioFinal'];
+        let contenido = `<h3>¡Felicitaciones! <br> Usted eligió este paquete:</h3>`;
 
-for (let i=0;i< localStorage.length;i++){
-    let parrafo=document.createElement('p');
-    let clave= localStorage.key(i);
-    parrafo.innerHTML= localStorage.getItem(clave);
-    divCarrito.appendChild(parrafo);
+        for (const [clave, valor] of Object.entries(viajeData)) {
+            if (clavesMostrar.includes(clave)) {
+                contenido += `<p><strong>${clave}:</strong> ${valor}</p>`;
+            }
+        }
 
-    
-    
-    const comprarElemento=document.createElement('button');
-    comprarElemento.classList.add('btnComprar');
-    divCarrito.appendChild(comprarElemento);    
-    comprarElemento.innerHTML="Comprar";
-    comprarElemento.addEventListener("click",()=> {
+        parrafo.innerHTML = contenido;
+        divCarrito.appendChild(parrafo);
+    } else {
+        parrafo.innerHTML = localStorage.getItem(clave);
+        divCarrito.appendChild(parrafo);
+    }
+
+    const comprarElemento = crearBoton("Comprar", "btnComprar", () => {
         Swal.fire({
-            position: "center-center",
+            position: "center",
             icon: "success",
-            title: "Su compra se ha realizado con Exito",
+            title: "Su compra se ha realizado con éxito",
             showConfirmButton: false,
-            duration: 3000,
+            timer: 3000,
+        }).then(() => {
+            localStorage.removeItem(clave);
+            location.reload();
         });
-        localStorage.removeItem(clave);    
-        location.reload();
     });
-    const borrarElemento=document.createElement('button');
-    borrarElemento.classList.add('btnBorrar');
-    divCarrito.appendChild(borrarElemento);
-    borrarElemento.innerHTML="Borrar";
-    borrarElemento.addEventListener("click",()=> {
+    divCarrito.appendChild(comprarElemento);
+
+    const borrarElemento = crearBoton("Borrar", "btnBorrar", () => {
         Swal.fire({
-            title: "Estas Seguro?",
+            title: "¿Estás seguro?",
             text: "¡No podrás revertir esto!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Si, borrar!"
+            confirmButtonText: "¡Sí, borrar!"
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
                     title: "Borrado!",
-                    text: "Su Paquete ha sido borrado.",
+                    text: "Su paquete ha sido borrado.",
                     icon: "success",
-                    timer:1500,
+                    timer: 1500,
+                }).then(() => {
+                    localStorage.removeItem(clave);
+                    location.reload();
                 });
-                localStorage.removeItem(clave);    
-                location.reload();
             }
         });
     });
-    
-    
-};
+    divCarrito.appendChild(borrarElemento);
+}
 
+function crearBoton(texto, clase, callback) {
+    const boton = document.createElement('button');
+    boton.classList.add(clase);
+    boton.innerHTML = texto;
+    boton.addEventListener("click", callback);
+    return boton;
+}
 
 
 
