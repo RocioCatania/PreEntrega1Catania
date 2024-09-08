@@ -57,6 +57,7 @@ crearRedesSociales(ulRedes);
 articuloRedes.appendChild(ulRedes);
 
 function asignarAtributosYClases(elemento, clase = null, texto = null, atributos = {}) {
+
     if (clase) elemento.classList.add(clase);
     if (texto) elemento.innerHTML = texto;
     for (const [key, value] of Object.entries(atributos)) {
@@ -70,15 +71,16 @@ function asignarAtributosInput(input, placeholder, tipo, clase, id) {
 
 function crearRedesSociales(ulRedes) {
     const redes = [
-        { nombre: "../assets/fondos/instagram.png", text: "Calle Ninguna 2424, CABA, ARG" },
-        { nombre: "./assets/fondo/instagram.png", text: "@Pataventura_turismo" },
-        { nombre: "./assets/fondo/youtube.png", text: "Pataventura por el Sur Argentino" },
-        { nombre: "./assets/fondo/facebook.png", text: "Pataventura Turismo" }
+        { nombre: "../assets/fondos/ubicacion.png", text: "Calle Ninguna 2424, CABA, ARG" ,clase:"datos",url: "https://maps.app.goo.gl/ooq7KP788FPnziTX8"},
+        { nombre: "../assets/fondos/instagram.png", text: "@Pataventura_turismo",clase:"datos",url:"https://www.youtube.com/" },
+        { nombre: "../assets/fondos/youtube.png", text: "Pataventura por el Sur Argentino" , clase:"datos",url:"https://www.youtube.com"},
+        { nombre: "../assets/fondos/facebook.png", text: "Pataventura Turismo", clase:"datos",url:"https://www.facebook.com"}
     ];
 
-    redes.forEach(({ nombre, text }) => {
+    redes.forEach(({ nombre, text, clase, url }) => {
         const li = document.createElement('li');
-        li.innerHTML = `<a><img src="${nombre}" alt="icono"> ${text}</a>`;
+        li.innerHTML = `<a href= "${url}"><img  src="${nombre}" alt="icono"> ${text}</a>`;
+        li.classList.add (clase);
         ulRedes.append(li);
     });
 }

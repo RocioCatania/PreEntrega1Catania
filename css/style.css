@@ -590,6 +590,10 @@ video {
     padding-top: 3.125rem;
     padding-bottom: 1.25rem;
  }
+ .articuloMap {
+    margin: 3.125rem 0px  0px 3.125rem;
+ }
+
 .input {
     text-align: center;
     padding: .625rem;
@@ -643,4 +647,26 @@ video {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.datos a img {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+}
+.datos a img:hover {
+    background-color: white;
+    border-radius: 1.25rem;
+    width: 3.125rem;
+    height: 3.125rem;
+}
+.datos a {
+    color: white;
+}
+.datos a:hover {
+    color:  #A8EB12;
+    border-radius: 1.25rem;
+    font-size: 1.5625rem;
+}
+.articuloRedes {
+    margin: 3.125rem 0px  0px 3.125rem;
 }

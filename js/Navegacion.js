@@ -14,10 +14,6 @@ const enlace = [
         nombre:"PLANIFICA TU VIAJE"
     },
     {
-        link:"destinos",
-        nombre:"DESTINOS"
-    },
-    {
         link:"paquetes",
         nombre:"PAQUETES"
     },
